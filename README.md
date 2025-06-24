@@ -6,7 +6,9 @@ Step1: Use already existing yolo v11 type model to detect objects in the videos 
 
 Step2: Cut these detections out from both the videos and create embeddings for each detection using OSNet (Omni-Scale Feature Learning for Person Re-Identification)*
 
-Step3: For each detected/tracked player in Video A:
+Step3: Tracking consistent IDs within Video A and Video B (using DeepSORT)
+
+Step4: For each detected/tracked player in Video A:
 -Extract feature embedding.
   1) Compare against all player embeddings in Video B using cosine similarity or Euclidean distance.
   2) Pick the match with the highest similarity.
@@ -31,4 +33,4 @@ Consistent across different camera angles
 
 DEPENDENCIES/TOOLS
 ----------------------------------------------------------------------------------------------------------------------
-pip install cv2, torch, numpy, ultralytics, torchreid, torchvision, scipy
+pip install cv2, torch, numpy, ultralytics, torchreid, torchvision, scipy, deep_sort_realtime
